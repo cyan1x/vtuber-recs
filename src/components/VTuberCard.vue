@@ -6,7 +6,7 @@ const props = defineProps<{
   vtuber: VTuber
 }>()
 
-const imgSrc = ref(`url('./${props.vtuber.imgName}.webp')`)
+const imgSrc = ref(`url("../${props.vtuber.imgName}.webp")`)
 </script>
 
 <template>
