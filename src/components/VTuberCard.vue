@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue"
 import { VTuber } from "./VTuberData"
+import { marked } from "marked"
 
 const props = defineProps<{
   vtuber: VTuber
@@ -21,14 +22,18 @@ const imgSrc = ref(`url("../${props.vtuber.imgName}.webp")`)
         <h3>{{ props.vtuber.org }}</h3>
       </div>
 
-      <div class="desc">
-        <p>{{ props.vtuber.description }}</p>
-      </div>
+      <div
+        class="desc markdown"
+        v-html="marked.parse(props.vtuber.description)"
+      ></div>
     </div>
 
     <div class="genres-container">
       <h3>Genres:</h3>
-      <span>{{ props.vtuber.genres.join(", ") }}</span>
+      <template v-for="(frequency, genre, index) in props.vtuber.genres">
+        <template v-if="index > 0">, </template>
+        <span :class="frequency">{{ genre }}</span>
+      </template>
     </div>
 
     <div class="genres-container">
@@ -48,7 +53,7 @@ const imgSrc = ref(`url("../${props.vtuber.imgName}.webp")`)
 
 <style scoped>
 .root {
-  background: rgba(245, 255, 255, 0.92);
+  background: rgba(245, 249, 255, 0.9);
 
   /* background: #292929;
   color: #ddd; */
@@ -136,6 +141,19 @@ h3 {
   color: gray;
 }
 
+.markdown :deep(a) {
+  color: #227bf0;
+}
+
+.markdown :deep(a::after) {
+  content: "\2197";
+  padding: 2px;
+}
+
+.markdown :deep(del) {
+  text-decoration: line-through;
+}
+
 .img-border {
   border: double 3.5px transparent;
   border-radius: 50%;
@@ -173,5 +191,17 @@ h3 {
 
 a {
   color: #1673cf;
+}
+
+.frequent {
+  color: rgb(50, 207, 50);
+}
+
+.infrequent {
+  color: rgb(226, 166, 55);
+}
+
+.rare {
+  color: rgb(145, 103, 197);
 }
 </style>
