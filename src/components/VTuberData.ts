@@ -55,25 +55,6 @@ export const vtubers: VTuber[] = [
     },
   },
   {
-    name: "Nachoneko",
-    org: "indie",
-    imgName: "nacho",
-    description: `VTuber persona of illustrator Amashiro Natsuki, known for designing Hololive EN's [Gawr Gura](https://hololive.wiki/wiki/Gawr_Gura). Avid enjoyer of pineapple pizza ~~and other weird food~~.`,
-    genres: {
-      "fps/tps": "infrequent",
-      moba: "infrequent",
-      zatsudan: "infrequent",
-      variety: "infrequent",
-      art: "rare",
-    },
-    tags: [],
-    links: {
-      twitch: "https://www.twitch.tv/nacho_dayo",
-      youtube: "https://www.youtube.com/@Nachoneko_dayo",
-      homepage: "https://amashiro.com/",
-    },
-  },
-  {
     name: "Nekota Tsuna",
     org: "vspo!",
     imgName: "tsuna",
@@ -133,6 +114,25 @@ export const vtubers: VTuber[] = [
     tags: ["babiniku", "voice-changer"],
     links: {
       youtube: "https://www.youtube.com/@TOMARI_MARI",
+    },
+  },
+  {
+    name: "Nachoneko",
+    org: "indie",
+    imgName: "nacho",
+    description: `VTuber persona of illustrator Amashiro Natsuki, known for designing Hololive EN's [Gawr Gura](https://hololive.wiki/wiki/Gawr_Gura). Avid enjoyer of pineapple pizza ~~and other weird food~~.`,
+    genres: {
+      "fps/tps": "infrequent",
+      moba: "infrequent",
+      zatsudan: "infrequent",
+      variety: "infrequent",
+      art: "rare",
+    },
+    tags: [],
+    links: {
+      twitch: "https://www.twitch.tv/nacho_dayo",
+      youtube: "https://www.youtube.com/@Nachoneko_dayo",
+      homepage: "https://amashiro.com/",
     },
   },
 ]

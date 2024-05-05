@@ -53,7 +53,7 @@ const imgSrc = ref(`url("../${props.vtuber.imgName}.webp")`)
 
 <style scoped>
 .root {
-  background: rgba(245, 249, 255, 0.9);
+  background: rgba(245, 249, 255, 0.95);
 
   /* background: #292929;
   color: #ddd; */
@@ -70,9 +70,7 @@ const imgSrc = ref(`url("../${props.vtuber.imgName}.webp")`)
   border-radius: 15px;
   grid-gap: 2px;
   width: 550px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-
-  transition: all 0.2s ease-in-out;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.055), 0 3px 6px rgba(0, 0, 0, 0.088);
 }
 
 @media screen and (max-width: 720px) {
@@ -147,7 +145,7 @@ h3 {
 
 .markdown :deep(a::after) {
   content: "\2197";
-  padding: 2px;
+  /* padding: 2px; */
 }
 
 .markdown :deep(del) {
