@@ -22,8 +22,8 @@ function getStringValue(
     Array.isArray(value)
       ? value.join(", ")
       : value.constructor === Object
-      ? Object.keys(value).join(", ")
-      : value
+        ? Object.keys(value).join(", ")
+        : value
   ) as string
 }
 
@@ -53,13 +53,8 @@ const filteredVtubers = computed(() => {
 
 <template>
   <div class="search">
-    <input
-      class="search-box"
-      type="text"
-      placeholder="Filter by name, org, description"
-      ref="searchElement"
-      v-model="keyword"
-    />
+    <input class="search-box" type="text" placeholder="Filter by name, org, description" ref="searchElement"
+      v-model="keyword" />
     <!-- Filter by vtuber property -->
     <!-- <select class="search-select" v-model="property">
       <option value="any">any</option>
@@ -72,11 +67,7 @@ const filteredVtubers = computed(() => {
   </div>
 
   <div class="cards">
-    <VTuberCard
-      v-for="vtuber in filteredVtubers"
-      :key="vtuber.name"
-      :vtuber="vtuber"
-    />
+    <VTuberCard v-for="vtuber in filteredVtubers" :key="vtuber.name" :vtuber="vtuber" />
   </div>
 </template>
 

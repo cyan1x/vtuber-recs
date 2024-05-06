@@ -13,7 +13,9 @@ const imgSrc = ref(`url("../${props.vtuber.imgName}")`)
 <template>
   <div class="root">
     <div class="img-container">
-      <div class="img-border"><div class="img-div"></div></div>
+      <div class="img-border">
+        <div class="img-div"></div>
+      </div>
     </div>
 
     <div class="info-container">
@@ -31,24 +33,24 @@ const imgSrc = ref(`url("../${props.vtuber.imgName}")`)
       <h3>Genres:</h3>
       <p>
         <template v-for="(frequency, genre, index) in props.vtuber.genres">
-          <template v-if="index > 0">, </template>
+          <template v-if="index > 0"><span class="divider"> | </span></template>
           <span :class="frequency">{{ genre }}</span>
         </template>
       </p>
     </div>
 
-    <div v-if="props.vtuber.tags[0]" class="tags-container">
+    <!-- <div v-if="props.vtuber.tags[0]" class="tags-container">
       <h3>Tags:</h3>
       <p>
         <span>{{ props.vtuber.tags.join(", ") }}</span>
       </p>
-    </div>
+    </div> -->
 
     <div class="links-container">
       <h3>Links:</h3>
       <p>
         <template v-for="(link, website, index) in props.vtuber.links">
-          <template v-if="index > 0">, </template>
+          <template v-if="index > 0"><span class="divider"> | </span></template>
           <a :class="website" :href="link">{{ website }}</a>
         </template>
       </p>
@@ -140,7 +142,8 @@ const imgSrc = ref(`url("../${props.vtuber.imgName}")`)
 }
 
 .title {
-  font-size: 1.25rem; /* 18px */
+  font-size: 1.25rem;
+  /* 18px */
   padding-bottom: 10px;
 }
 
@@ -181,16 +184,12 @@ a::after,
 .img-border {
   border: double 3.5px transparent;
   border-radius: 50%;
-  background-image: linear-gradient(
-      170deg,
+  background-image: linear-gradient(170deg,
       rgba(223, 249, 255, 0.95),
-      rgba(236, 227, 250, 0.95)
-    ),
-    radial-gradient(
-      circle farthest-corner at 0.2% 0.5%,
+      rgba(236, 227, 250, 0.95)),
+    radial-gradient(circle farthest-corner at 0.2% 0.5%,
       rgba(123, 11, 208, 0.3) 3.7%,
-      rgba(54, 214, 235, 0.4) 92.7%
-    );
+      rgba(54, 214, 235, 0.4) 92.7%);
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
@@ -214,15 +213,19 @@ a::after,
 }
 
 .frequent {
-  color: rgb(50, 207, 50);
+  color: rgb(0, 197, 115);
 }
 
 .infrequent {
-  color: rgb(226, 166, 55);
+  color: rgb(255, 169, 107);
 }
 
 .youtube {
   color: rgb(235, 68, 68);
+}
+
+.rare {
+  color: rgb(96, 69, 164);
 }
 
 .twitch {
@@ -233,7 +236,8 @@ a::after,
   color: rgb(66, 175, 218);
 }
 
-.rare {
-  color: rgb(145, 103, 197);
+.divider {
+  color: rgba(0, 0, 0, 0.247);
+  font-size: 0.8em;
 }
-</style>
+</style>s
