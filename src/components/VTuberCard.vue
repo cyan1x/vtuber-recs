@@ -7,7 +7,7 @@ const props = defineProps<{
   vtuber: VTuber
 }>()
 
-const imgSrc = ref(`url("../${props.vtuber.imgName}.webp")`)
+const imgSrc = ref(`url("../${props.vtuber.imgName}")`)
 </script>
 
 <template>
@@ -22,38 +22,44 @@ const imgSrc = ref(`url("../${props.vtuber.imgName}.webp")`)
         <h3>{{ props.vtuber.org }}</h3>
       </div>
 
-      <div
-        class="desc markdown"
-        v-html="marked.parse(props.vtuber.description)"
-      ></div>
+      <div class="desc">
+        <p class="markdown" v-html="marked.parse(props.vtuber.description)"></p>
+      </div>
     </div>
 
     <div class="genres-container">
       <h3>Genres:</h3>
-      <template v-for="(frequency, genre, index) in props.vtuber.genres">
-        <template v-if="index > 0">, </template>
-        <span :class="frequency">{{ genre }}</span>
-      </template>
+      <p>
+        <template v-for="(frequency, genre, index) in props.vtuber.genres">
+          <template v-if="index > 0">, </template>
+          <span :class="frequency">{{ genre }}</span>
+        </template>
+      </p>
     </div>
 
-    <div class="genres-container">
+    <div v-if="props.vtuber.tags[0]" class="tags-container">
       <h3>Tags:</h3>
-      <span>{{ props.vtuber.tags.join(", ") }}</span>
+      <p>
+        <span>{{ props.vtuber.tags.join(", ") }}</span>
+      </p>
     </div>
 
     <div class="links-container">
       <h3>Links:</h3>
-      <template v-for="(link, website, index) in props.vtuber.links">
-        <template v-if="index > 0">, </template>
-        <a :href="link">{{ website }}</a>
-      </template>
+      <p>
+        <template v-for="(link, website, index) in props.vtuber.links">
+          <template v-if="index > 0">, </template>
+          <a :class="website" :href="link">{{ website }}</a>
+        </template>
+      </p>
     </div>
   </div>
 </template>
 
 <style scoped>
 .root {
-  background: rgba(245, 249, 255, 0.95);
+  background: rgba(255, 255, 255, 0.92);
+  /* background: rgba(245, 249, 255, 0.95); */
 
   /* background: #292929;
   color: #ddd; */
@@ -106,6 +112,7 @@ const imgSrc = ref(`url("../${props.vtuber.imgName}.webp")`)
 .info-container {
   grid-area: "info";
   padding: 10px;
+  padding-left: 15px;
 }
 
 .genres-container {
@@ -126,7 +133,14 @@ const imgSrc = ref(`url("../${props.vtuber.imgName}.webp")`)
   padding: 10px;
 }
 
+.genres-container p,
+.tags-container p,
+.links-container p {
+  padding-top: 2px;
+}
+
 .title {
+  font-size: 1.25rem; /* 18px */
   padding-bottom: 10px;
 }
 
@@ -139,12 +153,24 @@ h3 {
   color: gray;
 }
 
+a,
 .markdown :deep(a) {
-  color: #227bf0;
+  color: #5d8dcb;
 }
 
+a,
+.markdown :deep(a) {
+  position: relative;
+  margin-right: 0.8em;
+}
+
+a::after,
 .markdown :deep(a::after) {
+  position: absolute;
   content: "\2197";
+  font-size: 0.8em;
+  top: -0.15em;
+  right: -0.9em;
   /* padding: 2px; */
 }
 
@@ -187,16 +213,24 @@ h3 {
   box-sizing: content-box;
 }
 
-a {
-  color: #1673cf;
-}
-
 .frequent {
   color: rgb(50, 207, 50);
 }
 
 .infrequent {
   color: rgb(226, 166, 55);
+}
+
+.youtube {
+  color: rgb(235, 68, 68);
+}
+
+.twitch {
+  color: rgb(146, 58, 205);
+}
+
+.twitter {
+  color: rgb(66, 175, 218);
 }
 
 .rare {

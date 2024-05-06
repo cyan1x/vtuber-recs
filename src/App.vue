@@ -1,7 +1,15 @@
 <script setup lang="ts">
-import { ref, Ref, computed } from "vue"
+import { ref, Ref, computed, onMounted, nextTick } from "vue"
 import VTuberCard from "./components/VTuberCard.vue"
 import { vtubers, VTuber } from "./components/VTuberData"
+
+// Focus on <input> on page load
+const searchElement = ref({}) as Ref<HTMLInputElement>
+onMounted(() => {
+  nextTick(() => {
+    searchElement.value.focus()
+  })
+})
 
 const keyword = ref("")
 const property = ref("any") as Ref<"any" | keyof VTuber>
@@ -48,17 +56,19 @@ const filteredVtubers = computed(() => {
     <input
       class="search-box"
       type="text"
-      placeholder="Search by name, org, description..."
+      placeholder="Filter by name, org, description"
+      ref="searchElement"
       v-model="keyword"
     />
-    <select class="search-select" v-model="property">
+    <!-- Filter by vtuber property -->
+    <!-- <select class="search-select" v-model="property">
       <option value="any">any</option>
       <option value="name">name</option>
       <option value="org">org</option>
       <option value="description">description</option>
       <option value="genres">genres</option>
       <option value="tags">tags</option>
-    </select>
+    </select> -->
   </div>
 
   <div class="cards">
@@ -95,7 +105,8 @@ const filteredVtubers = computed(() => {
 .search-select {
   background-color: white;
   margin: 10px;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(36, 36, 36, 0.23);
+  /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(36, 36, 36, 0.23); */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.055), 0 3px 6px rgba(0, 0, 0, 0.088);
   border-radius: 10px;
   padding: 0.5rem;
   padding-left: 1rem;
