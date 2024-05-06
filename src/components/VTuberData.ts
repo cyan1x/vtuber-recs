@@ -2,6 +2,7 @@ const genres = [
   "zatsudan",
   "fps/tps",
   "valorant",
+  "mahjong",
   "gta",
   "moba",
   "variety",
@@ -40,28 +41,11 @@ export interface VTuber {
 
 export const vtubers: VTuber[] = [
   {
-    name: "Shirona Shizuku",
-    org: "neo-porte",
-    imgName: "shirona_shizuku.jpg",
-    description:
-      "My favorite ダウナー系 vtuber. Has a very unique and soft speaking style. Consistently does long talk/game streams that are perfect for background listening.",
-    genres: {
-      valorant: "frequent",
-      zatsudan: "infrequent",
-      variety: "infrequent",
-    },
-    tags: [],
-    links: {
-      youtube: "https://www.youtube.com/@ShironaShizuku",
-      twitter: "https://twitter.com/shizuku_shirona",
-    },
-  },
-  {
     name: "Nekomata Okayu",
     org: "hololive",
     imgName: "nekomata_okayu.jpg",
     description:
-      "Probably the most beginner-friendly vtuber in hololive. Speaks clearly and slowly. Also pretty soft-spoken and occasionally does ASMR streams.",
+      "Possibly the most beginner-friendly VTuber in hololive. Speaks clearly and slowly. Also pretty soft-spoken and occasionally does ASMR streams.",
     genres: {
       variety: "frequent",
       zatsudan: "infrequent",
@@ -74,11 +58,45 @@ export const vtubers: VTuber[] = [
     },
   },
   {
+    name: "Shirona Shizuku",
+    org: "neo-porte",
+    imgName: "shirona_shizuku.jpg",
+    description:
+      "My favorite VTuber, voice-wise. Has a very unique and soft speaking style. Consistently does long talk/game streams that are perfect for background listening.",
+    genres: {
+      valorant: "frequent",
+      zatsudan: "infrequent",
+      variety: "infrequent",
+    },
+    tags: [],
+    links: {
+      youtube: "https://www.youtube.com/@ShironaShizuku",
+      twitter: "https://twitter.com/shizuku_shirona",
+    },
+  },
+  {
+    name: "Shirayuki Reid",
+    org: "neo-porte",
+    imgName: "shirayuki_reid.jpg",
+    description:
+      "Mahjong and FPS player; his Jantama streams are some of the most entertaining on the platform. Rages regularly. Watching his streams (and reading the chat) is more than enough to learn Japanese Mahjong terminology if you're familiar with the game.",
+    genres: {
+      "mahjong": "frequent",
+      "fps/tps": "frequent",
+    },
+    tags: [],
+    links: {
+      youtube: "https://www.youtube.com/@Shirayuki_Reid",
+      twitch: "https://www.twitch.tv/shirayuki_reid",
+      twitter: "https://twitter.com/Shirayuki_Reid",
+    },
+  },
+  {
     name: "Tsumugi Kokage",
     org: "vspo!",
     imgName: "tsumugi_kokage.jpg",
     description:
-      "One of vspo!'s newest members and also one of its best Valorant players alongside [Yumeno Akari](https://twitter.com/AKARINdaooo), peaking at Immortal 3. Recommended if you enjoy watching Valorant streams and you want to learn basic terminology and callouts.",
+      "One of vspo!'s newest members and one of its best Valorant players alongside [Yumeno Akari](https://twitter.com/AKARINdaooo), peaking at Immortal 3. Highly recommended if you enjoy watching Valorant streams and want to learn basic terminology and callouts.",
     genres: {
       valorant: "frequent",
       zatsudan: "infrequent",
