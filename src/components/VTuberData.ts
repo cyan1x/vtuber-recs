@@ -79,7 +79,7 @@ export const vtubers: VTuber[] = [
     org: "neo-porte",
     imgName: "shirayuki_reid.jpg",
     description:
-      "Mahjong and FPS player; his Jantama streams are some of the most entertaining on the platform. Rages regularly. Watching his streams (and reading the chat) is more than enough to learn Japanese Mahjong terminology if you're familiar with the game.",
+      "A Mahjong and FPS player, his Jantama streams are some of the most entertaining on the platform. Rages regularly. Watching his streams (and reading the chat) is more than enough to learn Japanese Mahjong terminology if you're familiar with the game.",
     genres: {
       "mahjong": "frequent",
       "fps/tps": "frequent",
