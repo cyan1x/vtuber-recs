@@ -52,11 +52,16 @@ const filteredVtubers = computed(() => {
 </script>
 
 <template>
-  <div class="search">
-    <input class="search-box" type="text" placeholder="Filter by name, org, description" ref="searchElement"
-      v-model="keyword" />
-    <!-- Filter by vtuber property -->
-    <!-- <select class="search-select" v-model="property">
+  <div class="base">
+    <div class="logo">
+      <span>vtuber-recs</span>
+    </div>
+
+    <div class="search">
+      <input class="search-box" type="text" placeholder="Filter by name, org, description..." ref="searchElement"
+        v-model="keyword" />
+      <!-- Filter by vtuber property -->
+      <!-- <select class="search-select" v-model="property">
       <option value="any">any</option>
       <option value="name">name</option>
       <option value="org">org</option>
@@ -64,10 +69,11 @@ const filteredVtubers = computed(() => {
       <option value="genres">genres</option>
       <option value="tags">tags</option>
     </select> -->
-  </div>
+    </div>
 
-  <div class="cards">
-    <VTuberCard v-for="vtuber in filteredVtubers" :key="vtuber.name" :vtuber="vtuber" />
+    <div class="cards">
+      <VTuberCard v-for="vtuber in filteredVtubers" :key="vtuber.name" :vtuber="vtuber" />
+    </div>
   </div>
 </template>
 
@@ -76,27 +82,57 @@ const filteredVtubers = computed(() => {
   transition: all 0.2s ease-in-out;
 }
 
+.base {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+.logo {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.25);
+  font-size: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .base {
+    padding: 1.5rem;
+  }
+
+  .logo {
+    position: fixed;
+    top: 0.75rem;
+    right: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .base {
+    padding: 2rem;
+  }
+}
+
 .cards {
   /* height: 100vh; */
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: flex-start;
   gap: 1rem;
-  padding: 1rem;
 }
 
 .search {
   display: flex;
-  justify-content: center;
-  margin: 1rem;
+  /* justify-content: center; */
+  /* margin-top: 2rem; */
 }
 
 .search-box,
 .search-select {
   background-color: white;
-  margin: 0.5rem;
   /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(36, 36, 36, 0.23); */
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.055), 0 3px 6px rgba(0, 0, 0, 0.088);
   border-radius: 0.5rem;
@@ -106,7 +142,8 @@ const filteredVtubers = computed(() => {
 }
 
 .search-box {
-  flex-grow: 0.25;
+  width: 25rem;
+  max-width: 100%;
 }
 
 .search-box::placeholder {
