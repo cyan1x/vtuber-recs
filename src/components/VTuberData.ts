@@ -9,6 +9,7 @@ const genres = [
   "karaoke",
   "art",
   "asmr",
+  "sf6",
 ] as const
 
 type Genre = (typeof genres)[number]
@@ -23,6 +24,7 @@ const tags = [
   "multilingual",
   "fast-speaker",
   "slow-speaker",
+  "chill",
   "voice-changer",
   "babiniku",
 ] as const
@@ -47,11 +49,12 @@ export const vtubers: VTuber[] = [
     description:
       "Possibly the most beginner-friendly VTuber in hololive. Speaks clearly and slowly. Also pretty soft-spoken and occasionally does ASMR streams.",
     genres: {
+      sf6: "frequent",
+      gta: "frequent",
       variety: "frequent",
-      zatsudan: "infrequent",
-      asmr: "infrequent",
+      zatsudan: "rare",
     },
-    tags: ["slow-speaker"],
+    tags: [],
     links: {
       youtube: "https://www.youtube.com/@NekomataOkayu",
       twitter: "https://twitter.com/nekomataokayu",
@@ -62,7 +65,7 @@ export const vtubers: VTuber[] = [
     org: "neo-porte",
     imgName: "shirona_shizuku.jpg",
     description:
-      "My favorite VTuber, voice-wise. Has a very unique and soft speaking style. Consistently does long talk/game streams that are perfect for background listening.",
+      "Has a very unique and soft speaking style. Consistently does long talk/game streams that are perfect for background listening.",
     genres: {
       valorant: "frequent",
       zatsudan: "infrequent",
@@ -71,24 +74,43 @@ export const vtubers: VTuber[] = [
     tags: [],
     links: {
       youtube: "https://www.youtube.com/@ShironaShizuku",
+      twitch: "https://www.twitch.tv/shirona_shizuku",
       twitter: "https://twitter.com/shizuku_shirona",
     },
   },
   {
-    name: "Shirayuki Reid",
-    org: "neo-porte",
-    imgName: "shirayuki_reid.jpg",
-    description:
-      "A Mahjong and FPS player, his Jantama streams are some of the most entertaining on the platform. Rages regularly. Watching his streams (and reading the chat) is more than enough to learn Japanese Mahjong terminology if you're familiar with the game.",
+    name: "Kanae",
+    org: "nijisanji",
+    imgName: "kanae.jpg",
+    description: `One half of Nijisanji music unit ChroNoiR. Very chill streams on a wide variety of games. Currently playing a lot of SF6 on Twitch. Highly recommended for female viewers.`,
     genres: {
-      "mahjong": "frequent",
+      gta: "frequent",
       "fps/tps": "frequent",
+      zatsudan: "infrequent",
+      variety: "infrequent",
+      karaoke: "infrequent",
     },
     tags: [],
     links: {
-      youtube: "https://www.youtube.com/@Shirayuki_Reid",
-      twitch: "https://www.twitch.tv/shirayuki_reid",
-      twitter: "https://twitter.com/Shirayuki_Reid",
+      youtube: "https://www.youtube.com/@Kanae",
+      twitch: "https://www.twitch.tv/kanae_2434",
+      twitter: "https://twitter.com/Kanae_2434",
+    },
+  },
+  {
+    name: "Nekota Tsuna",
+    org: "vspo!",
+    imgName: "nekota_tsuna.jpg",
+    description: `Experienced in a wide variety of FPS games. Korean native, but speaks very natural Japanese and is a great example of a (near) native-level speaker.`,
+    genres: {
+      "fps/tps": "frequent",
+      zatsudan: "infrequent",
+      variety: "infrequent",
+    },
+    tags: ["korean", "bilingual"],
+    links: {
+      youtube: "https://www.youtube.com/@tsuna_nekota",
+      twitch: "https://www.twitch.tv/tsuna_nekota",
     },
   },
   {
@@ -108,41 +130,60 @@ export const vtubers: VTuber[] = [
       twitter: "https://twitter.com/kokage_tsumugi",
     },
   },
+  {
+    name: "Amane Kanata",
+    org: "hololive",
+    imgName: "amane_kanata.jpg",
+    description:
+      "Arguably one of the most challenging vtubers in Hololive. Very energetic and hyper resulting in really fast slurred speech with lots of fillers. However it's this very quality that makes her gameplay and storytelling streams entertaining. Plays a variety of games but often plays soulslikes.",
+    genres: {
+      variety: "frequent",
+      zatsudan: "rare",
+    },
+    tags: [],
+    links: {
+      youtube: "https://www.youtube.com/@AmaneKanata",
+      twitter: "https://twitter.com/amanekanatach",
+    },
+  },
+  {
+    name: "Shirayuki Reid",
+    org: "neo-porte",
+    imgName: "shirayuki_reid.jpg",
+    description:
+      "A Mahjong and FPS player, his Jantama streams are some of the most entertaining on the platform. Rages regularly. Watching his streams (and reading the chat) is more than enough to learn Japanese Mahjong terminology if you're familiar with the game.",
+    genres: {
+      mahjong: "frequent",
+      "fps/tps": "frequent",
+    },
+    tags: [],
+    links: {
+      youtube: "https://www.youtube.com/@Shirayuki_Reid",
+      twitch: "https://www.twitch.tv/shirayuki_reid",
+      twitter: "https://twitter.com/Shirayuki_Reid",
+    },
+  },
+  {
+    name: "Kaga Nazuna",
+    org: "vspo!",
+    imgName: "kaga_nazuna.jpg",
+    description: `Former CS:GO and PUBG player, peak immortal in Valorant. Currently addicted to GTA5 RP, and is a great entry to the genre.`,
+    genres: {
+      gta: "frequent",
+      "fps/tps": "frequent",
+      zatsudan: "infrequent",
+      variety: "infrequent",
+      karaoke: "infrequent",
+    },
+    tags: ["fast-speaker"],
+    links: {
+      youtube: "https://www.youtube.com/@nazunakaga",
+      twitch: "https://www.twitch.tv/nazunakaga",
+      twitter: "https://www.twitter.com/nazuna_kaga",
+    },
+  },
 ]
-// {
-//   name: "Kaga Nazuna",
-//   org: "vspo!",
-//   imgName: "nazuna",
-//   description: `Former CS:GO and PUBG player, peak immortal in Valorant. Currently addicted to GTA5 RP.`,
-//   genres: {
-//     gta: "frequent",
-//     "fps/tps": "frequent",
-//     zatsudan: "infrequent",
-//     variety: "infrequent",
-//     karaoke: "infrequent",
-//   },
-//   tags: ["fast-speaker"],
-//   links: {
-//     youtube: "https://www.youtube.com/@nazunakaga",
-//     twitch: "https://www.twitch.tv/nazunakaga",
-//   },
-// },
-// {
-//   name: "Nekota Tsuna",
-//   org: "vspo!",
-//   imgName: "tsuna",
-//   description: `Experienced in a wide variety of FPS games. Speaks Japanese and Korean fluently.`,
-//   genres: {
-//     "fps/tps": "frequent",
-//     zatsudan: "infrequent",
-//     variety: "infrequent",
-//   },
-//   tags: ["korean", "bilingual"],
-//   links: {
-//     youtube: "https://www.youtube.com/@tsuna_nekota",
-//     twitch: "https://www.twitch.tv/tsuna_nekota",
-//   },
-// },
+
 // {
 //   name: "Usada Pekora",
 //   org: "hololive",

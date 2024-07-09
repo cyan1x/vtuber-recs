@@ -51,7 +51,7 @@ const imgSrc = ref(`url("../${props.vtuber.imgName}")`)
       <p>
         <template v-for="(link, website, index) in props.vtuber.links">
           <template v-if="index > 0"><span class="divider"> | </span></template>
-          <a :class="website" :href="link">{{ website }}</a>
+          <a :class="website" :href="link" target="_blank">{{ website }}</a>
         </template>
       </p>
     </div>

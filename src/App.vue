@@ -84,6 +84,7 @@ const filteredVtubers = computed(() => {
   justify-content: center;
   align-items: flex-start;
   gap: 20px;
+  padding: 20px;
 }
 
 .search {
