@@ -12,7 +12,7 @@ const imgSrc = ref(`url("../${props.vtuber.imgName}")`)
 
 <template>
   <div class="root">
-    <div class="img-container">
+    <div class=" img-container">
       <div class="img-border">
         <div class="img-div"></div>
       </div>
@@ -81,6 +81,10 @@ const imgSrc = ref(`url("../${props.vtuber.imgName}")`)
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.055), 0 3px 6px rgba(0, 0, 0, 0.088);
 }
 
+.compact {
+  width: 20rem;
+}
+
 @media screen and (max-width: 720px) {
   .root {
     /* background-color: green; */
@@ -115,19 +119,22 @@ const imgSrc = ref(`url("../${props.vtuber.imgName}")`)
 .genres-container {
   grid-area: "genres";
   grid-column: span 2;
-  padding: 0.75rem;
+  padding: 0.5rem;
+  padding-left: 0.75rem;
 }
 
 .tags-container {
   grid-area: "tags";
   grid-column: span 2;
-  padding: 0.75rem;
+  padding: 0.5rem;
+  padding-left: 0.75rem;
 }
 
 .links-container {
   grid-area: "links";
   grid-column: span 2;
-  padding: 0.75rem;
+  padding: 0.5rem;
+  padding-left: 0.75rem;
 }
 
 .genres-container p,
@@ -233,5 +240,7 @@ a::after,
 .divider {
   color: rgba(0, 0, 0, 0.247);
   font-size: 0.8em;
+  padding-left: 0.125rem;
+  padding-right: 0.125rem;
 }
 </style>s
