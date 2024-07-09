@@ -74,10 +74,10 @@ const imgSrc = ref(`url("../${props.vtuber.imgName}")`)
     "genres ."
     "tags ."
     "links .";
-  padding: 20px;
-  border-radius: 15px;
-  grid-gap: 2px;
-  width: 550px;
+  padding: 1.25rem;
+  border-radius: 1rem;
+  grid-gap: 0.25rem;
+  width: 35rem;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.055), 0 3px 6px rgba(0, 0, 0, 0.088);
 }
 
@@ -101,50 +101,44 @@ const imgSrc = ref(`url("../${props.vtuber.imgName}")`)
   }
 }
 
-/* .root:hover {
-  transform: scale(1.2);
-  margin: 50px;
-} */
-
 .img-container {
   grid-area: "image";
-  padding: 10px;
+  padding: 0.75rem;
 }
 
 .info-container {
   grid-area: "info";
-  padding: 10px;
-  padding-left: 15px;
+  padding: 0.75rem;
+  padding-left: 1rem;
 }
 
 .genres-container {
   grid-area: "genres";
   grid-column: span 2;
-  padding: 10px;
+  padding: 0.75rem;
 }
 
 .tags-container {
   grid-area: "tags";
   grid-column: span 2;
-  padding: 10px;
+  padding: 0.75rem;
 }
 
 .links-container {
   grid-area: "links";
   grid-column: span 2;
-  padding: 10px;
+  padding: 0.75rem;
 }
 
 .genres-container p,
 .tags-container p,
 .links-container p {
-  padding-top: 2px;
+  padding-top: 0.25rem;
 }
 
 .title {
   font-size: 1.25rem;
-  /* 18px */
-  padding-bottom: 10px;
+  padding-bottom: 0.75rem;
 }
 
 h2 {
@@ -152,7 +146,7 @@ h2 {
 }
 
 h3 {
-  font-size: 0.8em;
+  font-size: 0.8rem;
   color: gray;
 }
 
@@ -164,16 +158,16 @@ a,
 a,
 .markdown :deep(a) {
   position: relative;
-  margin-right: 0.8em;
+  margin-right: 0.8rem;
 }
 
 a::after,
 .markdown :deep(a::after) {
   position: absolute;
   content: "\2197";
-  font-size: 0.8em;
-  top: -0.15em;
-  right: -0.9em;
+  font-size: 0.8rem;
+  top: -0.15rem;
+  right: -0.9rem;
   /* padding: 2px; */
 }
 

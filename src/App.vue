@@ -83,23 +83,23 @@ const filteredVtubers = computed(() => {
   flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
-  gap: 20px;
-  padding: 20px;
+  gap: 1rem;
+  padding: 1rem;
 }
 
 .search {
   display: flex;
   justify-content: center;
-  margin: 20px;
+  margin: 1rem;
 }
 
 .search-box,
 .search-select {
   background-color: white;
-  margin: 10px;
+  margin: 0.5rem;
   /* box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(36, 36, 36, 0.23); */
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.055), 0 3px 6px rgba(0, 0, 0, 0.088);
-  border-radius: 10px;
+  border-radius: 0.5rem;
   padding: 0.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
